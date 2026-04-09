@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { typography } from '../../../tokens';
+import { typography } from '../../tokens';
 import './SearchInput.css';
 
 export type SearchInputSize = 's' | 'm' | 'l';

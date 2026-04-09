@@ -9,8 +9,8 @@ export type ApplicationStatusBadgeVariant =
   | 'CANCELLED';
 
 const LABELS: Record<ApplicationStatusBadgeVariant, string> = {
-  IN_PROGRESS: 'Ожидаем ответ от Т-Лизинг',
-  AWAITING_TL: 'Ожидаем ответ от Т-Лизинг',
+  IN_PROGRESS: 'В работе',
+  AWAITING_TL: 'В работе',
   APPROVED: 'Одобрено',
   REJECTED: 'Отклонено',
   CANCELLED: 'Отменена',

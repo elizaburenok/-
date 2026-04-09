@@ -1,5 +1,5 @@
 import React from 'react';
-import { typography } from '../../../tokens';
+import { typography } from '../../tokens';
 import './Cell.css';
 
 export type CellAlign = 'left' | 'center' | 'right';

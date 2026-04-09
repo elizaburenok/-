@@ -1,5 +1,5 @@
 import React from 'react';
-import { typography } from '../../../tokens';
+import { typography } from '../../tokens';
 import './Chip.css';
 
 export type ChipVariant = 'chip' | 'dropdown' | 'tab' | 'action';

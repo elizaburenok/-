@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { typography } from '../../../tokens';
+import { typography } from '../../tokens';
 import './Calendar.css';
 
 export interface CalendarProps {

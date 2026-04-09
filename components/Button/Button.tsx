@@ -1,5 +1,5 @@
 import React from 'react';
-import { typography } from '../../../tokens';
+import { typography } from '../../tokens';
 import './Button.css';
 
 export type ButtonType = 'Primary' | 'Secondary' | 'Transparent' | 'White';

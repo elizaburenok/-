@@ -35,6 +35,9 @@ const HISTORY_KEY = 'leasing-applications-history';
 const DRAFT_KEY = 'leasing-application-draft';
 /** One-time: rewrite stored CANCELLED → IN_PROGRESS («В обработке»). */
 const MIGRATION_RESET_CANCELLED_KEY = 'leasing-migration-reset-cancelled-to-in-progress-v1';
+/** Demo заявка TL-DEMO-IN1 (mock ФИО — Петрова Анна Сергеевна): once force status AWAITING_TL in localStorage only. */
+const MIGRATION_IN1_AWAITING_TL_KEY = 'leasing-migration-in1-awaiting-tl-v1';
+const TL_DEMO_IN1_APPLICATION_ID = 'TL-DEMO-IN1';
 
 /**
  * Permanent showcase rows (all статусы). Merged on the list page; not written to localStorage.
@@ -144,6 +147,17 @@ export function loadHistory(): LeasingApplicationRecord[] {
       saveHistory(records);
     }
     localStorage.setItem(MIGRATION_RESET_CANCELLED_KEY, '1');
+  }
+
+  if (typeof localStorage !== 'undefined' && !localStorage.getItem(MIGRATION_IN1_AWAITING_TL_KEY)) {
+    const idx = records.findIndex((r) => r.applicationId === TL_DEMO_IN1_APPLICATION_ID);
+    if (idx !== -1 && records[idx].status !== 'AWAITING_TL') {
+      const copy = [...records];
+      copy[idx] = { ...copy[idx], status: 'AWAITING_TL' };
+      records = copy;
+      saveHistory(records);
+    }
+    localStorage.setItem(MIGRATION_IN1_AWAITING_TL_KEY, '1');
   }
 
   return records;
