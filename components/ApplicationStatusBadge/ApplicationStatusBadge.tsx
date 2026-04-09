@@ -10,7 +10,7 @@ export type ApplicationStatusBadgeVariant =
 
 const LABELS: Record<ApplicationStatusBadgeVariant, string> = {
   IN_PROGRESS: 'В работе',
-  AWAITING_TL: 'В работе',
+  AWAITING_TL: 'Ожидаем ответ от Т-Лизинг',
   APPROVED: 'Одобрено',
   REJECTED: 'Отклонено',
   CANCELLED: 'Отменена',

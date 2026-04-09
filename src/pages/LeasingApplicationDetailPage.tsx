@@ -171,14 +171,14 @@ export const LeasingApplicationDetailPage: React.FC = () => {
           />
         </aside>
         <main className={styles.mainColumn}>
-          {canCancel ? (
-            <div className={styles.actionsAboveContent}>
-              <Button type="Secondary" onClick={onCancelApplication}>
-                Отменить
-              </Button>
-            </div>
-          ) : null}
           <div className={styles.content}>
+            {canCancel ? (
+              <div className={styles.actionsRow}>
+                <Button type="Secondary" onClick={onCancelApplication}>
+                  Отменить
+                </Button>
+              </div>
+            ) : null}
             {isTerminal && (
               <div className={styles.closedStrip} role="status">
                 <LockIcon />
@@ -227,6 +227,12 @@ export const LeasingApplicationDetailPage: React.FC = () => {
               </div>
 
               {record.status === 'IN_PROGRESS' && (
+                <p className={styles.inProgressDescription} role="status">
+                  Заявка в работе
+                </p>
+              )}
+
+              {record.status === 'AWAITING_TL' && (
                 <p className={styles.inProgressDescription} role="status">
                   Ожидаем ответ от Т-Лизинг
                 </p>

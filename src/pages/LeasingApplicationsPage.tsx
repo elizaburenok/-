@@ -75,7 +75,7 @@ function listAriaLabel(row: LeasingApplicationRecord): string {
   if (row.status === 'AWAITING_TL') {
     return `Заявка ${row.applicationId}, ожидаем ответ от Т-Лизинг, ИНН ${row.inn}`;
   }
-  return `Заявка ${row.applicationId}, ожидаем ответ от Т-Лизинг, ИНН ${row.inn}`;
+  return `Заявка ${row.applicationId}, в работе, ИНН ${row.inn}`;
 }
 
 const FLASH_MS = 3000;
@@ -156,7 +156,6 @@ export const LeasingApplicationsPage: React.FC = () => {
             rootLinkText="Лизинг"
             onRootLinkClick={() => navigate('/')}
             title="Заявки на лизинг"
-            subtitle="История отправленных заявок в Т-Лизинг"
           />
         </aside>
         <main className={styles.mainColumn}>
