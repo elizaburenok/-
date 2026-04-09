@@ -129,15 +129,9 @@
 }
 
 .clientInfoHeader {
+  min-width: 0;
   padding-bottom: var(--spacing-xs);
   box-sizing: border-box;
-}
-
-.clientInfoTitleRow {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-1-5x);
-  min-width: 0;
 }
 
 .clientInfoName {
@@ -152,19 +146,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   animation: detailNameReveal 0.35s ease forwards;
-}
-
-.clientInfoChevronWrap {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  align-self: stretch;
-  color: var(--color-primitive-primary);
-}
-
-.chevronIcon {
-  display: block;
-  flex-shrink: 0;
 }
 
 .clientInfoDetails {
