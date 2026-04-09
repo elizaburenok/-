@@ -220,14 +220,6 @@
   margin-bottom: var(--spacing-m);
 }
 
-.inProgressDescription {
-  margin: 0 0 var(--spacing-m);
-  font-family: var(--font-family-primary);
-  font-size: var(--font-size-m);
-  line-height: var(--line-height-m);
-  color: var(--color-text-muted);
-}
-
 @media (prefers-reduced-motion: reduce) {
   .clientInfoName {
     animation: none;

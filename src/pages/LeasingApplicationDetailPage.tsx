@@ -226,18 +226,6 @@ export const LeasingApplicationDetailPage: React.FC = () => {
                 <ApplicationStatusBadge status={record.status} />
               </div>
 
-              {record.status === 'IN_PROGRESS' && (
-                <p className={styles.inProgressDescription} role="status">
-                  Заявка в работе
-                </p>
-              )}
-
-              {record.status === 'AWAITING_TL' && (
-                <p className={styles.inProgressDescription} role="status">
-                  Ожидаем ответ от Т-Лизинг
-                </p>
-              )}
-
               <dl className={styles.fields}>
                 <div className={styles.fieldRow}>
                   <dt>Номер заявки</dt>
