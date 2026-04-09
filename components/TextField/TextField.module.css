@@ -1,0 +1,99 @@
+/* [custom] — no Figma canvas node; visual language aligned with SearchInput / Text field (TUI) using project tokens */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  width: 100%;
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-m);
+}
+
+.label {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+  letter-spacing: var(--letter-spacing-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primitive-primary);
+}
+
+.control {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 40px;
+  padding: var(--spacing-xs) var(--spacing-s);
+  background-color: var(--color-bg-default);
+  border: 1px solid var(--color-primitive-neutral-2);
+  border-radius: var(--rounding-2-5x);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.controlFocused {
+  border-color: var(--color-primitive-brand);
+  box-shadow: 0 0 0 2px var(--color-bg-brand-2);
+}
+
+.controlError {
+  border-color: var(--color-primitive-error);
+}
+
+.controlError.controlFocused {
+  box-shadow: 0 0 0 2px var(--color-container-transparent-1);
+}
+
+.controlDisabled {
+  background-color: var(--color-bg-neutral-1);
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Hub Figma 30253 — search / compact field 32px */
+.controlCompact {
+  min-height: 32px;
+  padding: 6px 10px;
+}
+
+.inputCompact {
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+  letter-spacing: var(--letter-spacing-xs);
+}
+
+.input {
+  flex: 1;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+  letter-spacing: var(--letter-spacing-m);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-primitive-primary);
+}
+
+.input::placeholder {
+  color: var(--color-primitive-neutral-4);
+}
+
+.input:disabled {
+  cursor: not-allowed;
+}
+
+.message {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+  letter-spacing: var(--letter-spacing-xs);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-primitive-error);
+}

@@ -1,0 +1,122 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-page-primary);
+  padding: 0 var(--spacing-m);
+  box-sizing: border-box;
+}
+
+/* Navigator left + main content right (see NavigationBar back row padding-top) */
+.layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  gap: var(--spacing-xl);
+  box-sizing: border-box;
+}
+
+.navColumn {
+  flex: 0 0 auto;
+  width: min(280px, 34vw);
+  min-width: 0;
+}
+
+.mainColumn {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  /* Align block start with NavigationBar `.navigation-bar__button-section` top padding */
+  padding-top: var(--spacing-8x);
+  padding-bottom: var(--spacing-2xl);
+  box-sizing: border-box;
+}
+
+@media (max-width: 720px) {
+  .layout {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .navColumn {
+    width: 100%;
+  }
+
+  .mainColumn {
+    padding-top: 0;
+  }
+}
+
+.filtersRow {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--spacing-m);
+  width: 100%;
+}
+
+.search {
+  width: 100%;
+  min-width: 0;
+}
+
+.statusTabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-m);
+  min-width: 0;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--spacing-m);
+}
+
+.listSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+  padding-bottom: var(--spacing-s);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+}
+
+.empty {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+  color: var(--color-primitive-secondary);
+  margin: 0;
+}
+
+/* Temporary success alert after creating a leasing application */
+.successAlert {
+  width: 100%;
+  padding: var(--spacing-m) var(--spacing-m);
+  border-radius: var(--rounding-3x);
+  border: 1px solid var(--color-border-default);
+  background: var(--color-bg-success-2);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+  color: var(--color-primitive-primary);
+  box-sizing: border-box;
+}
+
+.successAlert strong {
+  color: var(--color-badge-text-success);
+  font-weight: var(--font-weight-demi-bold);
+}

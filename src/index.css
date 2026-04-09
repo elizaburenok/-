@@ -1,0 +1,19 @@
+@import '../tokens/css-variables.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-family-primary);
+  background: var(--color-page-secondary);
+  color: var(--color-primitive-primary);
+}
+
+#root {
+  min-height: 100vh;
+}

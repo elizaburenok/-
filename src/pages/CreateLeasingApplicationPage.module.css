@@ -1,0 +1,153 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-page-secondary);
+  padding: 0 var(--spacing-m);
+  box-sizing: border-box;
+}
+
+/* Left NavigationBar + main — same row, top-aligned (see LeasingApplicationsPage) */
+.layout {
+  display: flex;
+  flex-direction: row;
+  /* Stretch main column to viewport so form actions can sit at the bottom */
+  align-items: stretch;
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  gap: var(--spacing-xl);
+  box-sizing: border-box;
+}
+
+.navColumn {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  width: min(280px, 34vw);
+  min-width: 0;
+}
+
+.mainColumn {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  /* Center the 720px column in the remaining space (avoids content hugging the right) */
+  align-items: center;
+  /* Align with NavigationBar `.navigation-bar__button-section` top padding */
+  padding-top: var(--spacing-8x);
+  padding-bottom: var(--spacing-2xl);
+  box-sizing: border-box;
+}
+
+/* Figma 30516 — ContentOffer: 720px column, centered in the main area (equal space L/R) */
+.content {
+  width: min(100%, 720px);
+  max-width: 720px;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+  box-sizing: border-box;
+}
+
+@media (max-width: 720px) {
+  .layout {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .navColumn {
+    width: 100%;
+  }
+
+  .mainColumn {
+    padding-top: 0;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  gap: var(--spacing-s);
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--spacing-m);
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  padding-top: var(--spacing-xl);
+}
+
+.pasteButton {
+  flex-shrink: 0;
+  padding: 0 var(--spacing-xs);
+  min-height: var(--line-height-s);
+  border: none;
+  border-radius: var(--rounding-2-5x);
+  background: transparent;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-s);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-s);
+  color: var(--color-primitive-brand);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.pasteButton:hover:not(:disabled) {
+  background-color: var(--color-state-container-transparent-1-active);
+}
+
+.pasteButton:disabled {
+  color: var(--color-primitive-neutral-4);
+  cursor: not-allowed;
+}
+
+/* [custom] — no Figma source, based on Transparent Button (TUI) */
+
+/* BAStatus strip — ошибка API (30516) */
+.statusStrip {
+  width: 100%;
+  padding: var(--spacing-m) var(--spacing-m);
+  border-radius: var(--rounding-3x);
+  border: 1px solid var(--color-border-default);
+  background-color: var(--color-bg-neutral-1);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+  color: var(--color-primitive-primary);
+  box-sizing: border-box;
+}
+
+.statusStripError {
+  border-color: var(--color-primitive-error);
+  background-color: var(--color-bg-default);
+}
+
+.bannerHint {
+  padding: var(--spacing-m);
+  border-radius: var(--rounding-2-5x);
+  background-color: var(--color-container-transparent-1);
+  border: 1px solid var(--color-primitive-neutral-2);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+  color: var(--color-primitive-secondary);
+}
+
+.hintCode {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs);
+  color: var(--color-primitive-primary);
+}

@@ -1,0 +1,268 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-page-secondary);
+  padding: 0 var(--spacing-m);
+  box-sizing: border-box;
+}
+
+/* Navigator left + main content right (see LeasingApplicationsPage / CreateLeasingApplicationPage) */
+.layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  gap: var(--spacing-xl);
+  box-sizing: border-box;
+}
+
+.navColumn {
+  flex: 0 0 auto;
+  width: min(280px, 34vw);
+  min-width: 0;
+}
+
+.mainColumn {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Align block start with NavigationBar `.navigation-bar__button-section` top padding */
+  padding-top: var(--spacing-8x);
+  padding-bottom: var(--spacing-2xl);
+  box-sizing: border-box;
+}
+
+.actionsAboveContent {
+  width: min(100%, 720px);
+  max-width: 720px;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 var(--spacing-m);
+  margin-bottom: var(--spacing-m);
+  box-sizing: border-box;
+}
+
+.content {
+  width: min(100%, 720px);
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-m) var(--spacing-m) var(--spacing-2xl);
+  box-sizing: border-box;
+}
+
+@media (max-width: 720px) {
+  .layout {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .navColumn {
+    width: 100%;
+  }
+
+  .mainColumn {
+    padding-top: 0;
+  }
+}
+
+.closedStrip {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-s);
+  width: 100%;
+  padding: var(--spacing-m);
+  border-radius: var(--rounding-3x);
+  border: 1px solid var(--color-border-default);
+  background: var(--color-bg-neutral-1);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+  color: var(--color-text-muted);
+  box-sizing: border-box;
+}
+
+.lockIcon {
+  flex-shrink: 0;
+  color: var(--color-primitive-neutral-4);
+}
+
+.card {
+  width: 100%;
+  padding: var(--spacing-m);
+  border-radius: var(--rounding-3x);
+  border: 1px solid var(--color-border-default);
+  background: unset;
+  box-sizing: border-box;
+}
+
+.cardMuted {
+  /* Extra de-emphasis on detail panel; list row uses opacity; here keep readable */
+  background: var(--color-bg-neutral-1);
+}
+
+/* Debtor block — Admin Finance ClientInfoDebitorTitle (Figma 62595:45615) */
+.clientInfoCard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-m);
+  border-radius: var(--rounding-2-5x);
+  border: 1px solid var(--color-border-default);
+  background: unset;
+  box-sizing: border-box;
+}
+
+.clientInfoHeader {
+  padding-bottom: var(--spacing-xs);
+  box-sizing: border-box;
+}
+
+.clientInfoTitleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1-5x);
+  min-width: 0;
+}
+
+.clientInfoName {
+  margin: 0;
+  font-family: var(--font-family-primary);
+  /* Figma TTN 600 / 20px / 26 — nearest token: --font-size-l (18px) */
+  font-size: var(--font-size-l);
+  font-weight: var(--font-weight-demi-bold);
+  line-height: var(--line-height-l);
+  color: var(--color-primitive-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  animation: detailNameReveal 0.35s ease forwards;
+}
+
+.clientInfoChevronWrap {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  align-self: stretch;
+  color: var(--color-primitive-primary);
+}
+
+.chevronIcon {
+  display: block;
+  flex-shrink: 0;
+}
+
+.clientInfoDetails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-m);
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.clientInfoDetails :global(.cell) {
+  flex: 1 1 200px;
+  min-width: 0;
+  box-sizing: border-box;
+  /* Override Cell size-M horizontal padding (20px); card already has page padding */
+  padding-inline: 0;
+}
+
+.copyButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--color-primitive-brand);
+  border-radius: var(--rounding-1x);
+}
+
+.copyButton:hover:not(:disabled) {
+  color: var(--color-state-bg-brand-active);
+}
+
+.copyButton:focus-visible {
+  outline: var(--border-width-input-focus) solid var(--color-primitive-brand);
+  outline-offset: 2px;
+}
+
+.copyButton:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+.cardHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--spacing-m);
+  margin-bottom: var(--spacing-m);
+}
+
+.inProgressDescription {
+  margin: 0 0 var(--spacing-m);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+  color: var(--color-text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clientInfoName {
+    animation: none;
+  }
+}
+
+@keyframes detailNameReveal {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fields {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+}
+
+.fieldRow {
+  margin: 0;
+}
+
+.fieldRow dt {
+  margin: 0 0 var(--spacing-xs);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-xs);
+  letter-spacing: var(--letter-spacing-xs);
+  color: var(--color-text-muted);
+}
+
+.fieldRow dd {
+  margin: 0;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+  color: var(--color-primitive-primary);
+}

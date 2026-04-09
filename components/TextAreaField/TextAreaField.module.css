@@ -1,0 +1,95 @@
+/* [custom] — Textarea Field (Figma naming); tokens only */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  width: 100%;
+}
+
+.label {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+  letter-spacing: var(--letter-spacing-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primitive-primary);
+}
+
+.control {
+  display: flex;
+  width: 100%;
+  min-height: 120px;
+  padding: var(--spacing-m);
+  background-color: var(--color-bg-default);
+  border: 1px solid var(--color-primitive-neutral-2);
+  border-radius: var(--rounding-2-5x);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.controlFocused {
+  border-color: var(--color-primitive-brand);
+  box-shadow: 0 0 0 2px var(--color-bg-brand-2);
+}
+
+.controlError {
+  border-color: var(--color-primitive-error);
+}
+
+.textarea {
+  flex: 1;
+  width: 100%;
+  min-height: 88px;
+  border: none;
+  outline: none;
+  resize: vertical;
+  background: transparent;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+  letter-spacing: var(--letter-spacing-m);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-primitive-primary);
+}
+
+.textarea::placeholder {
+  color: var(--color-primitive-neutral-4);
+}
+
+.message {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+  color: var(--color-primitive-error);
+}
+
+/* Service Figma 30516 — .🛠Комментарии raised card */
+.raisedCard {
+  padding: var(--spacing-m);
+  background-color: var(--color-bg-default);
+  border-radius: var(--rounding-2-5x);
+  box-shadow: var(--shadow-surface-card);
+}
+
+.controlEmbedded {
+  min-height: 120px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.controlEmbedded.controlFocused {
+  border: none;
+  box-shadow: none;
+}
+
+.controlEmbedded.controlError {
+  border: none;
+  box-shadow: none;
+}
+
+.raisedCardError {
+  outline: 1px solid var(--color-primitive-error);
+  outline-offset: 0;
+}

@@ -1,0 +1,29 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 2px var(--rounding-1-5x) 3px;
+  border-radius: var(--rounding-1-5x);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-xs);
+  letter-spacing: var(--letter-spacing-xs);
+  white-space: nowrap;
+}
+
+.inProgress {
+  background: var(--color-bg-brand-2);
+  color: var(--color-badge-text-purple-bright);
+}
+
+.approved {
+  background: var(--color-bg-success-2);
+  color: var(--color-badge-text-success);
+}
+
+.rejected {
+  background: var(--color-bg-error-2);
+  color: var(--color-badge-text-risk-high);
+}
