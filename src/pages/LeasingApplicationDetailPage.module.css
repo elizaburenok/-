@@ -25,14 +25,20 @@
   min-width: 0;
 }
 
-/* Stretch to fill row; single inner column is centered (same pattern as CreateLeasingApplicationPage) */
+/*
+ * Stretch to fill row. Center the 720px column in the main area.
+ * Nav + gap only exist on the start side, so without offset the block sits right of the viewport
+ * center. Mirror nav width + layout gap on the end so left/right whitespace balances optically.
+ */
 .mainColumn {
   flex: 1;
   min-width: 0;
   min-height: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-inline-end: calc(min(280px, 34vw) + var(--spacing-xl));
   /* Align block start with NavigationBar `.navigation-bar__button-section` top padding */
   padding-top: var(--spacing-8x);
   padding-bottom: var(--spacing-2xl);
@@ -44,6 +50,7 @@
   width: min(100%, 720px);
   max-width: 720px;
   flex-shrink: 0;
+  margin-inline: auto;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xl);
@@ -69,6 +76,7 @@
 
   .mainColumn {
     padding-top: 0;
+    padding-inline-end: 0;
   }
 }
 
