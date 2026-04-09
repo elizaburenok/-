@@ -9,6 +9,7 @@ import {
   loadDraft,
   saveDraft,
 } from '../lib/leasingStorage';
+import { mockClientFullNameFromApplicationId } from '../lib/leasingMockClientName';
 import { submitLeasingApplication } from '../lib/mockLeasingApi';
 import styles from './CreateLeasingApplicationPage.module.css';
 
@@ -92,7 +93,7 @@ export const CreateLeasingApplicationPage: React.FC = () => {
             : comment.trim(),
         createdAt: new Date().toISOString(),
         status: 'IN_PROGRESS',
-        clientFullName: null,
+        clientFullName: mockClientFullNameFromApplicationId(applicationId),
         colvirCode: null,
       });
       navigate('/leasing/applications', {
